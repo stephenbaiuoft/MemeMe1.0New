@@ -21,98 +21,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wyg-xh-5dV" userLabel="Outer Vertical View">
-                                <rect key="frame" x="20" y="28" width="374" height="688"/>
+                            <navigationBar contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C62-mY-GUn" userLabel="TopBar">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem id="4CF-kb-LW2">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="14K-JT-mgW">
+                                            <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="-3"/>
+                                            <connections>
+                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="Ifj-vB-Gcf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="n7Z-Kf-Qwa">
+                                            <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="-3"/>
+                                            <connections>
+                                                <action selector="cancelMeme" destination="BYZ-38-t0r" id="77i-ma-B2p"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XKP-Ht-Rax" userLabel="BotBar">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <color key="backgroundColor" red="0.13129061240000001" green="0.57874745130000005" blue="0.29205058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <barButtonItem title="Add" id="s2n-Da-3Sd" userLabel="Album Button">
+                                        <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="-3"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="pickAnImageFromAlbum" destination="BYZ-38-t0r" id="5jQ-cz-ucv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1n1-xq-RVi"/>
+                                    <barButtonItem systemItem="camera" id="uld-kf-EAf" userLabel="Camera Button">
+                                        <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="-3"/>
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="MvR-QO-0bb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMK-5O-Wnj" userLabel="MView">
+                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C62-mY-GUn">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <items>
-                                            <navigationItem id="4CF-kb-LW2">
-                                                <barButtonItem key="leftBarButtonItem" systemItem="action" id="14K-JT-mgW">
-                                                    <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="-3"/>
-                                                    <connections>
-                                                        <action selector="shareMeme:" destination="BYZ-38-t0r" id="Ifj-vB-Gcf"/>
-                                                    </connections>
-                                                </barButtonItem>
-                                                <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="n7Z-Kf-Qwa">
-                                                    <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="-3"/>
-                                                    <connections>
-                                                        <action selector="cancelMeme" destination="BYZ-38-t0r" id="77i-ma-B2p"/>
-                                                    </connections>
-                                                </barButtonItem>
-                                            </navigationItem>
-                                        </items>
-                                    </navigationBar>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMK-5O-Wnj" userLabel="Middle View">
-                                        <rect key="frame" x="0.0" y="8" width="374" height="672"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="YOE-6u-fLd">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="672"/>
-                                            </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TOP" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="DbH-44-qwm" userLabel="Top Text Field">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="40"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BOT" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="GJv-4Y-xw5" userLabel="Bottom Text Field">
-                                                <rect key="frame" x="0.0" y="642" width="374" height="30"/>
-                                                <nil key="textColor"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                            </textField>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="YOE-6u-fLd" secondAttribute="trailing" id="0za-PP-NGg"/>
-                                            <constraint firstItem="YOE-6u-fLd" firstAttribute="leading" secondItem="FMK-5O-Wnj" secondAttribute="leading" id="1aF-g3-Tm6"/>
-                                            <constraint firstItem="DbH-44-qwm" firstAttribute="width" secondItem="FMK-5O-Wnj" secondAttribute="width" id="94b-aX-3N0"/>
-                                            <constraint firstItem="GJv-4Y-xw5" firstAttribute="bottom" secondItem="YOE-6u-fLd" secondAttribute="bottom" id="D5i-Zl-fVG"/>
-                                            <constraint firstItem="YOE-6u-fLd" firstAttribute="top" secondItem="FMK-5O-Wnj" secondAttribute="top" id="FpS-Cu-9Pz"/>
-                                            <constraint firstItem="YOE-6u-fLd" firstAttribute="width" secondItem="FMK-5O-Wnj" secondAttribute="width" id="IWz-UP-SrG"/>
-                                            <constraint firstItem="YOE-6u-fLd" firstAttribute="centerX" secondItem="FMK-5O-Wnj" secondAttribute="centerX" id="Ih4-v5-c9E"/>
-                                            <constraint firstItem="GJv-4Y-xw5" firstAttribute="width" secondItem="FMK-5O-Wnj" secondAttribute="width" id="Itv-Vu-08h"/>
-                                            <constraint firstAttribute="bottom" secondItem="YOE-6u-fLd" secondAttribute="bottom" id="M0J-7h-ew9"/>
-                                            <constraint firstItem="DbH-44-qwm" firstAttribute="centerX" secondItem="FMK-5O-Wnj" secondAttribute="centerX" id="UPN-fF-l5S"/>
-                                            <constraint firstItem="YOE-6u-fLd" firstAttribute="height" secondItem="FMK-5O-Wnj" secondAttribute="height" id="Up4-Ub-NoX"/>
-                                            <constraint firstItem="DbH-44-qwm" firstAttribute="top" secondItem="YOE-6u-fLd" secondAttribute="top" id="cZX-NX-uKZ"/>
-                                            <constraint firstItem="YOE-6u-fLd" firstAttribute="centerY" secondItem="FMK-5O-Wnj" secondAttribute="centerY" id="ney-T0-ekD"/>
-                                            <constraint firstItem="DbH-44-qwm" firstAttribute="height" secondItem="GJv-4Y-xw5" secondAttribute="height" id="ofJ-Db-Xh2"/>
-                                            <constraint firstItem="GJv-4Y-xw5" firstAttribute="centerX" secondItem="FMK-5O-Wnj" secondAttribute="centerX" id="yc8-px-wrF"/>
-                                        </constraints>
-                                    </view>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XKP-Ht-Rax">
-                                        <rect key="frame" x="0.0" y="688" width="374" height="0.0"/>
-                                        <color key="backgroundColor" red="0.13129061240000001" green="0.57874745130000005" blue="0.29205058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <items>
-                                            <barButtonItem title="Add" id="s2n-Da-3Sd" userLabel="Album Button">
-                                                <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="-3"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                <connections>
-                                                    <action selector="pickAnImageFromAlbum" destination="BYZ-38-t0r" id="5jQ-cz-ucv"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="1n1-xq-RVi"/>
-                                            <barButtonItem systemItem="camera" id="uld-kf-EAf" userLabel="Camera Button">
-                                                <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="-3"/>
-                                                <connections>
-                                                    <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="MvR-QO-0bb"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </items>
-                                    </toolbar>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YOE-6u-fLd" userLabel="Imageview">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TOP" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="DbH-44-qwm" userLabel="Top Text Field">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                        <nil key="textColor"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BOT" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="GJv-4Y-xw5" userLabel="Bottom Text Field">
+                                        <rect key="frame" x="0.0" y="598" width="414" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="C62-mY-GUn" firstAttribute="height" secondItem="XKP-Ht-Rax" secondAttribute="height" id="mBK-tI-g5v"/>
+                                    <constraint firstItem="DbH-44-qwm" firstAttribute="width" secondItem="GJv-4Y-xw5" secondAttribute="width" id="26W-IY-4Ve"/>
+                                    <constraint firstItem="YOE-6u-fLd" firstAttribute="top" secondItem="FMK-5O-Wnj" secondAttribute="top" id="8xC-YJ-pyv"/>
+                                    <constraint firstItem="YOE-6u-fLd" firstAttribute="leading" secondItem="FMK-5O-Wnj" secondAttribute="leading" id="Dap-te-U0J"/>
+                                    <constraint firstItem="GJv-4Y-xw5" firstAttribute="width" secondItem="FMK-5O-Wnj" secondAttribute="width" id="Itv-Vu-08h"/>
+                                    <constraint firstAttribute="bottom" secondItem="GJv-4Y-xw5" secondAttribute="bottom" id="TCF-Wr-yle"/>
+                                    <constraint firstItem="DbH-44-qwm" firstAttribute="centerX" secondItem="FMK-5O-Wnj" secondAttribute="centerX" id="UPN-fF-l5S"/>
+                                    <constraint firstAttribute="bottom" secondItem="YOE-6u-fLd" secondAttribute="bottom" id="aaj-6b-znM"/>
+                                    <constraint firstItem="DbH-44-qwm" firstAttribute="top" secondItem="FMK-5O-Wnj" secondAttribute="top" id="gVE-Nq-JYf"/>
+                                    <constraint firstAttribute="trailing" secondItem="YOE-6u-fLd" secondAttribute="trailing" id="uDD-Is-8QB"/>
+                                    <constraint firstItem="GJv-4Y-xw5" firstAttribute="centerX" secondItem="FMK-5O-Wnj" secondAttribute="centerX" id="yc8-px-wrF"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Wyg-xh-5dV" secondAttribute="bottom" constant="20" symbolic="YES" id="5I6-X6-yyr"/>
-                            <constraint firstAttribute="trailing" secondItem="Wyg-xh-5dV" secondAttribute="trailing" constant="20" symbolic="YES" id="oP3-0f-YBa"/>
-                            <constraint firstItem="Wyg-xh-5dV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="rUm-tt-6p1"/>
-                            <constraint firstItem="Wyg-xh-5dV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="uAS-ji-gUY"/>
+                            <constraint firstItem="FMK-5O-Wnj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="0f8-kb-D28"/>
+                            <constraint firstItem="C62-mY-GUn" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="84g-Ap-Ap6"/>
+                            <constraint firstItem="DbH-44-qwm" firstAttribute="width" secondItem="C62-mY-GUn" secondAttribute="width" id="GW1-eV-0N9"/>
+                            <constraint firstItem="XKP-Ht-Rax" firstAttribute="width" secondItem="C62-mY-GUn" secondAttribute="width" id="HfN-da-vaK"/>
+                            <constraint firstItem="XKP-Ht-Rax" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JD7-PR-01l"/>
+                            <constraint firstItem="FMK-5O-Wnj" firstAttribute="top" secondItem="C62-mY-GUn" secondAttribute="bottom" id="MCP-36-cUQ"/>
+                            <constraint firstItem="C62-mY-GUn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" symbolic="YES" id="TsQ-1j-A91"/>
+                            <constraint firstItem="FMK-5O-Wnj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="czj-GK-cve"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XKP-Ht-Rax" secondAttribute="bottom" symbolic="YES" id="hIx-xp-okl"/>
+                            <constraint firstItem="XKP-Ht-Rax" firstAttribute="top" secondItem="FMK-5O-Wnj" secondAttribute="bottom" id="qmw-ya-LnK"/>
+                            <constraint firstItem="C62-mY-GUn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yOO-Fj-3cq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -121,9 +115,8 @@
                         <outlet property="albumItem" destination="s2n-Da-3Sd" id="fNa-Pk-UXR"/>
                         <outlet property="cameraItem" destination="uld-kf-EAf" id="uBU-GW-pWz"/>
                         <outlet property="cancelItem" destination="n7Z-Kf-Qwa" id="vep-bK-2EO"/>
-                        <outlet property="imagePickerView" destination="YOE-6u-fLd" id="D6s-0V-vA5"/>
+                        <outlet property="imagePickerView" destination="YOE-6u-fLd" id="OLM-nB-bmo"/>
                         <outlet property="navigationBar" destination="C62-mY-GUn" id="MjS-yJ-Lub"/>
-                        <outlet property="outerStackView" destination="Wyg-xh-5dV" id="Ue9-Os-lCY"/>
                         <outlet property="pickerButton" destination="XKP-Ht-Rax" id="QgC-vn-5gK"/>
                         <outlet property="shareItem" destination="14K-JT-mgW" id="M1d-Vu-bsf"/>
                     </connections>
@@ -133,7 +126,4 @@
             <point key="canvasLocation" x="24.637681159420293" y="36.684782608695656"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="LaunchImage" width="1536" height="2048"/>
-    </resources>
 </document>
