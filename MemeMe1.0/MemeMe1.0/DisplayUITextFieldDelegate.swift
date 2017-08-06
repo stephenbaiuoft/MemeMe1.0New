@@ -10,14 +10,16 @@ import Foundation
 import UIKit
 
 class DisplayUITextFieldDelegate: NSObject, UITextFieldDelegate{
-    
-    
+        
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        textField.textAlignment = .center
+                
         if (textField.text == "Top" || textField.text == "Bot"){
             textField.text = ""
         }

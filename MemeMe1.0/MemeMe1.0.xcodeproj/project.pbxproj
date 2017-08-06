@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC45CE441F378C49008FDCE9 /* MemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45CE431F378C49008FDCE9 /* MemeModel.swift */; };
 		DC6044FB1F3124ED00278C9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6044FA1F3124ED00278C9F /* AppDelegate.swift */; };
 		DC6044FD1F3124ED00278C9F /* MemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6044FC1F3124ED00278C9F /* MemeViewController.swift */; };
 		DC6045001F3124ED00278C9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6044FE1F3124ED00278C9F /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC45CE431F378C49008FDCE9 /* MemeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemeModel.swift; path = ../MemeModel.swift; sourceTree = "<group>"; };
 		DC6044F71F3124ED00278C9F /* MemeMe1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6044FA1F3124ED00278C9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC6044FC1F3124ED00278C9F /* MemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				DC6045281F31518600278C9F /* Delegates */,
 				DC6044FA1F3124ED00278C9F /* AppDelegate.swift */,
+				DC45CE431F378C49008FDCE9 /* MemeModel.swift */,
 				DC6044FC1F3124ED00278C9F /* MemeViewController.swift */,
 				DC6044FE1F3124ED00278C9F /* Main.storyboard */,
 				DC6045011F3124ED00278C9F /* Assets.xcassets */,
@@ -276,6 +279,7 @@
 				DC6044FD1F3124ED00278C9F /* MemeViewController.swift in Sources */,
 				DC6044FB1F3124ED00278C9F /* AppDelegate.swift in Sources */,
 				DC60452A1F3151A300278C9F /* DisplayUITextFieldDelegate.swift in Sources */,
+				DC45CE441F378C49008FDCE9 /* MemeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +532,7 @@
 				DC6045211F3124ED00278C9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC6045221F3124ED00278C9F /* Build configuration list for PBXNativeTarget "MemeMe1.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +541,7 @@
 				DC6045241F3124ED00278C9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC6045251F3124ED00278C9F /* Build configuration list for PBXNativeTarget "MemeMe1.0UITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +550,7 @@
 				DC6045271F3124ED00278C9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
