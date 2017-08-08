@@ -78,7 +78,7 @@ extension MemeMainViewController: UIImagePickerControllerDelegate, UINavigationC
 extension MemeMainViewController{
     func keyboardWillShow(_ notification:Notification) {
         let keyboardHeight = getKeyboardHeight(notification)
-        if (BotTextField.isEditing && view.frame.origin.y == 0){
+        if (botTextField.isEditing && view.frame.origin.y == 0){
             // shifting upwards, from 0 to keybaord height
             view.frame.origin.y = -keyboardHeight
         }

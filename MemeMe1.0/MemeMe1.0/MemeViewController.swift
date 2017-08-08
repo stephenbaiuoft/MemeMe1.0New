@@ -17,8 +17,8 @@ class MemeMainViewController: UIViewController {
         pickerController.delegate = self
         
         // set-up for UITextFields
-        initTextFieldAttribute(textField: TopTextField)
-        initTextFieldAttribute(textField: BotTextField)
+        initTextFieldAttribute(textField: topTextField)
+        initTextFieldAttribute(textField: botTextField)
         
         // Mark: Initialize Delegates
         initDelegates()
@@ -46,8 +46,8 @@ class MemeMainViewController: UIViewController {
     @IBOutlet weak var pickerButton: UIToolbar!
     @IBOutlet weak var cameraItem: UIBarButtonItem!
     @IBOutlet weak var albumItem: UIBarButtonItem!
-    @IBOutlet weak var TopTextField: UITextField!
-    @IBOutlet weak var BotTextField: UITextField!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var botTextField: UITextField!
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var shareItem: UIBarButtonItem!
@@ -94,8 +94,8 @@ class MemeMainViewController: UIViewController {
     
     
     func initDelegates(){
-        prepareTextField(textField: TopTextField)
-        prepareTextField(textField: BotTextField)
+        prepareTextField(textField: topTextField)
+        prepareTextField(textField: botTextField)
     }
     
     
@@ -120,11 +120,7 @@ class MemeMainViewController: UIViewController {
                 self.save()
                 
                 // dimiss the activity view
-                activityC.dismiss(animated: true, completion: nil)
-                
-                // re-draw
-                self.outerStackView.setNeedsLayout()
-                    print("outerStackView update")
+                activityC.dismiss(animated: true, completion: nil)                
             }
         }
     }
@@ -133,20 +129,20 @@ class MemeMainViewController: UIViewController {
     // removes the selected picture
     @IBAction func cancelMeme(){
         imagePickerView.image = nil
-        TopTextField.text = ""
-        BotTextField.text = ""
+        topTextField.text = ""
+        botTextField.text = ""
         dismiss(animated: true, completion: nil)
         
         // dimiss keyboard if necessary
-        TopTextField.resignFirstResponder()
-        BotTextField.resignFirstResponder()
+        topTextField.resignFirstResponder()
+        botTextField.resignFirstResponder()
     }
     
     // save mem Object
     func save() {
         // Create the meme
         if(memedImage != nil){
-            let meme = Meme(topText: TopTextField.text!, bottomText: BotTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage!)
+            let meme = Meme(topText: topTextField.text!, bottomText: botTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage!)
         }
     }
 }
