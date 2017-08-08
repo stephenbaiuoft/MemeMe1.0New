@@ -82,11 +82,12 @@ class MemeMainViewController: UIViewController {
             NSStrokeColorAttributeName: UIColor.black,
             NSForegroundColorAttributeName: UIColor.white,
             NSFontAttributeName: UIFont(name:"Helvetica Neue", size: 40) ??  UIFont.init(),
-            NSStrokeWidthAttributeName: 10.0,
+            NSStrokeWidthAttributeName: -5.0,
         ]
         
         textField.defaultTextAttributes = memeTextAttributes
-        
+        // working textField Attributes here!!
+        textField.textAlignment = .center
         
     }
     
