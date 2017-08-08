@@ -28,7 +28,7 @@ class MemeMainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cameraItem.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        self.subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications()
         shareItem.isEnabled = (imagePickerView?.image != nil)                
     }
     
@@ -36,7 +36,7 @@ class MemeMainViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeFromKeyboardNotifications()
+        unsubscribeFromKeyboardNotifications()
     }
 
 
@@ -66,6 +66,7 @@ class MemeMainViewController: UIViewController {
         pickerController.sourceType = .photoLibrary
         present(pickerController, animated: true, completion: nil)
     }
+    
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
         
@@ -97,16 +98,18 @@ class MemeMainViewController: UIViewController {
         prepareTextField(textField: BotTextField)
     }
     
+    
     func prepareTextField(textField: UITextField){
         textField.delegate = TextFieldDelegate
     }
+    
     
     // share the edited Meme UIImage
     @IBAction func shareMeme(_ sender: UIBarButtonItem) {
         memedImage = generateMemedImage()
         
         let activityC = UIActivityViewController.init(activityItems: [memedImage ?? UIImage()], applicationActivities: [])
-        self.present(activityC, animated: true, completion: nil)
+        present(activityC, animated: true, completion: nil)
         
         //UIActivityType?, Bool, [Any]?, Error?
         
@@ -124,8 +127,6 @@ class MemeMainViewController: UIViewController {
                     print("outerStackView update")
             }
         }
-        
-    
     }
 
     
@@ -145,10 +146,8 @@ class MemeMainViewController: UIViewController {
     func save() {
         // Create the meme
         if(memedImage != nil){
-            let meme = Meme(topText: TopTextField.text!, bottomText: BotTextField.text!, originalImage: imagePickerView.image!, memedImage: self.memedImage!)
+            let meme = Meme(topText: TopTextField.text!, bottomText: BotTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage!)
         }
-        
-        // to be saved to album
     }
 }
 
