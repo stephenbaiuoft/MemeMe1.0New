@@ -13,10 +13,12 @@ class MemeMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        appDelegate = UIApplication.shared as! AppDelegate
-        memes = AppDelegate.memes
+        // MARK: AppDelegate Class Set Up for Meme App
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memes = appDelegate.memes
         
         pickerController = UIImagePickerController()
+        // pickerController notifies MemeMainVC then things happen, using MemeMainVC custom/default func
         pickerController.delegate = self
         
         // set-up for UITextFields
@@ -150,7 +152,9 @@ class MemeMainViewController: UIViewController {
         if(memedImage != nil){
             let meme = Meme(topText: topTextField.text!, bottomText: botTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage!)
             
-        //  Save to the app delegate's meems array
+        //  Save to the app delegate's meems array 
+        //  wonder if reloading from UIApplication.shared.delegate is necessary here?
+            appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.memes.append(meme)
         
         }
