@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-// MARK: Data Structure Definition
-extension MemeMainViewController{
-    struct Meme{
-        var topText: String
-        var bottomText: String
-        var originalImage: UIImage
-        var memedImage: UIImage
-    }
+// MARK: Important to make Meme Struct Outside MemeMainViewController
+//       so it is available throughout other classes!!!
+
+struct Meme{
+    var topText: String
+    var bottomText: String
+    var originalImage: UIImage
+    var memedImage: UIImage
 }
 
 // MARK: Back-end functions

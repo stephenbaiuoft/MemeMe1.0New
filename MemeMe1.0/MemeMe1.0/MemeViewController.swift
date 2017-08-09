@@ -9,10 +9,13 @@
 import UIKit
 
 class MemeMainViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        appDelegate = UIApplication.shared as! AppDelegate
+        memes = AppDelegate.memes
+        
         pickerController = UIImagePickerController()
         pickerController.delegate = self
         
@@ -57,6 +60,8 @@ class MemeMainViewController: UIViewController {
     
     var pickerController: UIImagePickerController!
     var memedImage: UIImage? = nil
+    var appDelegate: AppDelegate!
+    var memes:[Meme]!
     
     let TextFieldDelegate = DisplayUITextFieldDelegate()
     
@@ -144,6 +149,10 @@ class MemeMainViewController: UIViewController {
         // Create the meme
         if(memedImage != nil){
             let meme = Meme(topText: topTextField.text!, bottomText: botTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage!)
+            
+        //  Save to the app delegate's meems array
+            appDelegate.memes.append(meme)
+        
         }
     }
 }
