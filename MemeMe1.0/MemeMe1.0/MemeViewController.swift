@@ -17,8 +17,8 @@ class MemeMainViewController: UIViewController {
         pickerController.delegate = self
         
         // set-up for UITextFields
-        initTextFieldAttribute(textField: topTextField)
-        initTextFieldAttribute(textField: botTextField)
+        initTextFieldAttribute(textField: topTextField, defaultString: "TOP")
+        initTextFieldAttribute(textField: botTextField, defaultString: "BOT")
         
         // Mark: Initialize Delegates
         initDelegates()
@@ -76,7 +76,7 @@ class MemeMainViewController: UIViewController {
     
     
     // initializes Top/Bot Text Fields
-    func initTextFieldAttribute(textField: UITextField){
+    func initTextFieldAttribute(textField: UITextField, defaultString: String){
         // In a stack view, textAlignment has no effect
         
         let memeTextAttributes:[String:Any] = [
@@ -89,6 +89,7 @@ class MemeMainViewController: UIViewController {
         textField.defaultTextAttributes = memeTextAttributes
         // working textField Attributes here!!
         textField.textAlignment = .center
+        textField.text = defaultString
         
     }
     
@@ -129,8 +130,8 @@ class MemeMainViewController: UIViewController {
     // removes the selected picture
     @IBAction func cancelMeme(){
         imagePickerView.image = nil
-        topTextField.text = ""
-        botTextField.text = ""
+        topTextField.text = "TOP"
+        botTextField.text = "BOT"
         dismiss(animated: true, completion: nil)
         
         // dimiss keyboard if necessary

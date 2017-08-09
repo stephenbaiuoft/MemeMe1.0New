@@ -20,7 +20,7 @@ class DisplayUITextFieldDelegate: NSObject, UITextFieldDelegate{
         
         textField.textAlignment = .center
                 
-        if (textField.text == "Top" || textField.text == "Bot"){
+        if (textField.text == "TOP" || textField.text == "BOT"){
             textField.text = ""
         }
     }

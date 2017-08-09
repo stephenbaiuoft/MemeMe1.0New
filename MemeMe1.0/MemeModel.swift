@@ -26,8 +26,9 @@ extension MemeMainViewController{
         // y = view.frame.height + self.pickerButton.frame.height
         // so pickerButton goes out of the view
         pickerButton.frame = CGRect(x:0, y:self.view.frame.height + self.pickerButton.frame.height, width:self.view.frame.size.width, height: self.pickerButton.frame.height)
-        navigationBar.frame = CGRect(x:0, y:self.view.frame.height + self.navigationBar.frame.height,
-                                     width: self.view.frame.size.width, height: self.navigationBar.frame.height)
+//        navigationBar.frame = CGRect(x:0, y:self.view.frame.height + self.navigationBar.frame.height,
+//                                     width: self.view.frame.size.width, height: self.navigationBar.frame.height)
+        navigationBar.isHidden = true
         let controller = self.navigationController
         controller?.setNavigationBarHidden(true, animated: true)
         controller?.setToolbarHidden(true, animated: true)
@@ -41,8 +42,9 @@ extension MemeMainViewController{
         // TODO: Show toolbar and navbar
         pickerButton.frame = CGRect(x:0, y:self.view.frame.height - self.pickerButton.frame.height, width:self.view.frame.size.width, height: self.pickerButton.frame.height)
         
-        navigationBar.frame = CGRect(x:0, y:self.view.frame.height - self.navigationBar.frame.height,
-                                     width: self.view.frame.size.width, height: self.navigationBar.frame.height)
+//        navigationBar.frame = CGRect(x:0, y:self.view.frame.height - self.navigationBar.frame.height,
+//                                     width: self.view.frame.size.width, height: self.navigationBar.frame.height)
+        navigationBar.isHidden = false
         return memedImage
     }
 }
