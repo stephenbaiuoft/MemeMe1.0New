@@ -19,6 +19,14 @@ struct Meme{
     var memedImage: UIImage
 }
 
+// VC transition functions
+extension MemeMainViewController{
+    func initTabViewVC(){
+        let tabVC = storyboard?.instantiateViewController(withIdentifier: "MainUITabBarController") as! UITabBarController
+        present(tabVC, animated: true, completion: nil)
+    }
+}
+
 // MARK: Back-end functions
 extension MemeMainViewController{
     // Render view to an image

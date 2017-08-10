@@ -16,18 +16,22 @@ class MemeMainViewController: UIViewController {
         // MARK: AppDelegate Class Set Up for Meme App
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-        
-        pickerController = UIImagePickerController()
-        // pickerController notifies MemeMainVC then things happen, using MemeMainVC custom/default func
-        pickerController.delegate = self
-        
-        // set-up for UITextFields
-        initTextFieldAttribute(textField: topTextField, defaultString: "TOP")
-        initTextFieldAttribute(textField: botTextField, defaultString: "BOT")
-        
-        // Mark: Initialize Delegates
-        initDelegates()
-        
+        if(memes.count > 0 ){
+            // hand over to TabView VC
+            initTabViewVC()
+        }
+        else{
+            pickerController = UIImagePickerController()
+            // pickerController notifies MemeMainVC then things happen, using MemeMainVC custom/default func
+            pickerController.delegate = self
+            
+            // set-up for UITextFields
+            initTextFieldAttribute(textField: topTextField, defaultString: "TOP")
+            initTextFieldAttribute(textField: botTextField, defaultString: "BOT")
+            
+            // Mark: Initialize Delegates
+            initDelegates()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -126,9 +130,10 @@ class MemeMainViewController: UIViewController {
             (activity: UIActivityType?, completed: Bool, returnedItems: [Any]?, activityError:Error?) -> Void in
             if (completed){
                 self.save()
-                
                 // dimiss the activity view
-                activityC.dismiss(animated: true, completion: nil)                
+                activityC.dismiss(animated: true, completion: nil)
+                // go to TabViewVC now
+                self.initTabViewVC()
             }
         }
     }
