@@ -10,9 +10,11 @@ import UIKit
 
 class MemeTableViewController: UITableViewController {
 
-    let reuseIdentifier = "memeTableCell"
+    let reuseIdentifier = "memeTableViewCell"
     var appDelegate: AppDelegate!
     var memes: [Meme]!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +22,9 @@ class MemeTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()        
+
+        // MARK: get Data Model
         initDataModel()
     }
 
@@ -42,15 +46,19 @@ class MemeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MemeTableViewCell
         
         // Configure the cell...
         let row = (indexPath as NSIndexPath).row
-        cell.imageView?.image = memes[row].memedImage
-        cell.textLabel?.text = memes[row].topText + memes[row].bottomText
+        cell.memeImage?.image = memes[row].memedImage
+        cell.memeLabel?.text = memes[row].topText + memes[row].bottomText
         return cell
     }
  
+    // fix the heightForEach Row
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        return 75.0
+    }
 
     // MARK: Helper Functions
     

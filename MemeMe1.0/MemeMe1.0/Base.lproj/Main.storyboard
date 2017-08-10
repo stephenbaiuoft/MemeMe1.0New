@@ -144,27 +144,48 @@
         <scene sceneID="dSV-QD-ZeA">
             <objects>
                 <tableViewController id="PoX-gD-Ikf" customClass="MemeTableViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="R1w-zN-Uzu" userLabel="Meme Table View">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="167" sectionHeaderHeight="28" sectionFooterHeight="28" id="R1w-zN-Uzu" userLabel="Meme Table View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="memeTableCell" textLabel="fH0-Lj-EaV" style="IBUITableViewCellStyleDefault" id="Bz6-K6-ZjF" userLabel="M Table Cell">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="memeTableViewCell" rowHeight="75" id="ELP-gg-Mnv" customClass="MemeTableViewCell" customModule="MemeMe1_0" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bz6-K6-ZjF" id="bLs-IO-KMC">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ELP-gg-Mnv" id="URO-d9-kqn">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fH0-Lj-EaV">
-                                            <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RTs-1T-FaP" userLabel="Meme Image">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="75"/>
+                                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="kbf-Ch-0Df"/>
+                                                <constraint firstAttribute="height" constant="75" id="xwI-9N-KSQ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oy0-37-mWP" userLabel="Meme Label">
+                                            <rect key="frame" x="100" y="27" width="314" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="oy0-37-mWP" firstAttribute="centerY" secondItem="RTs-1T-FaP" secondAttribute="centerY" id="5OE-0n-keu"/>
+                                        <constraint firstItem="oy0-37-mWP" firstAttribute="leading" secondItem="RTs-1T-FaP" secondAttribute="trailing" id="zzV-Tb-Mqb"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="RTs-1T-FaP" firstAttribute="leading" secondItem="ELP-gg-Mnv" secondAttribute="leading" id="AuD-3X-X1P"/>
+                                    <constraint firstAttribute="trailing" secondItem="oy0-37-mWP" secondAttribute="trailing" id="B4p-wN-sXe"/>
+                                    <constraint firstItem="RTs-1T-FaP" firstAttribute="centerY" secondItem="ELP-gg-Mnv" secondAttribute="centerY" id="hAR-JZ-3vT"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="memeImage" destination="RTs-1T-FaP" id="k4o-Ld-7yM"/>
+                                    <outlet property="memeLabel" destination="oy0-37-mWP" id="bRf-NR-e0d"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -176,7 +197,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9K-pG-zL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210" y="-142"/>
+            <point key="canvasLocation" x="208.69565217391306" y="-142.66304347826087"/>
         </scene>
         <!--Tab Bar VC-->
         <scene sceneID="pe0-nO-l6Q">
@@ -246,7 +267,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLr-52-RdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228" y="544"/>
+            <point key="canvasLocation" x="187" y="696"/>
         </scene>
     </scenes>
     <resources>

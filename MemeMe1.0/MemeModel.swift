@@ -19,6 +19,13 @@ struct Meme{
     var memedImage: UIImage
 }
 
+let DEBUG = true
+func logD(msg:String){
+    if(DEBUG){
+        print(msg)
+    }
+}
+
 // VC transition functions
 extension MemeMainViewController{
     func initTabViewVC(){
