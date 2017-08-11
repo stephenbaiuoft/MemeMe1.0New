@@ -16,7 +16,9 @@ class MemeTableViewController: UITableViewController {
     // MARK: Variable Section
     let reuseIdentifier = "memeTableViewCell"
     let gotoMemeEditor = "gotoMemeEditor"
-    let memeController = "MemeMainViewController"
+    let memeEditorController = "MemeMainViewController"
+    let memeDetailController = "MemeDetailViewController"
+    
     var widthDic = [String:CGFloat]()
     var appDelegate: AppDelegate!
     var memes: [Meme]!
@@ -70,7 +72,11 @@ class MemeTableViewController: UITableViewController {
     
     // Tell the delegate that a particular row has been selected
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let controller = storyboard?.instantiateViewController(withIdentifier: memeDetailController ) as! MemeDetailViewController
+        let index = (indexPath as NSIndexPath).row
+        controller.selectedMeme = memes[index]
         
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 
 
@@ -85,9 +91,10 @@ class MemeTableViewController: UITableViewController {
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == gotoMemeEditor){
-            let controller = storyboard?.instantiateViewController(withIdentifier: memeController) as! MemeMainViewController
+            let controller = storyboard?.instantiateViewController(withIdentifier: memeEditorController) as! MemeMainViewController
             controller.shouldInitTableVC = false
             present(controller, animated: true, completion: nil)
         }
     }
+    
 }
