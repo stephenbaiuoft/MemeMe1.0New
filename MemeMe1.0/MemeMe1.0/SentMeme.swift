@@ -19,9 +19,10 @@ func initTestData(){
     appDelegate.memes.append(m1)
     appDelegate.memes.append(m2)
     appDelegate.memes.append(m3)
+
 }
 
-// MARK: TableView Delegate Methods
+// MARK: TableView Delegate & DataDelegate Methods
 extension SentMemeViewController{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,6 +50,27 @@ extension SentMemeViewController{
         return widthDic[reuseIdentifier]!
     }
     
+    // Enabling swip to left to delete a table cell
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
+        if (editingStyle == UITableViewCellEditingStyle.delete){
+            let index = (indexPath as NSIndexPath).row
+            
+            // Note: MUST Remove Data Model First as tableView.deleteRows will UPDATE BY following tableView -> Int (# of cells)
+            memes.remove(at: index)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            // remove the data in memes
+        }
+    }
+    
+    // Tell the delegate that a particular row has been selected
+    // Need to Present Detailed MemeView
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let index = (indexPath as NSIndexPath).row
+        let memeNavigationController = self.storyboard?.instantiateViewController(withIdentifier: memeDetailVCIdentifier) as! MemeNavigationViewController
+        memeNavigationController.selectedMeme = memes[index]
+        
+        
+    }
 
 }
 
@@ -61,8 +83,8 @@ extension SentMemeViewController{
     }
     
     func initDelegate(){
-        MemeTableView.delegate = self
-        MemeTableView.dataSource = self
+        memeTableView.delegate = self
+        memeTableView.dataSource = self
         
     }
     

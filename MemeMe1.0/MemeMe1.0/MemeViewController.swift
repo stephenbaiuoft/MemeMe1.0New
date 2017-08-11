@@ -20,18 +20,18 @@ class MemeMainViewController: UIViewController {
             // hand over to TabView VC
             initTabViewVC()
         }
-        else{
-            pickerController = UIImagePickerController()
-            // pickerController notifies MemeMainVC then things happen, using MemeMainVC custom/default func
-            pickerController.delegate = self
-            
-            // set-up for UITextFields
-            initTextFieldAttribute(textField: topTextField, defaultString: "TOP")
-            initTextFieldAttribute(textField: botTextField, defaultString: "BOT")
-            
-            // Mark: Initialize Delegates
-            initDelegates()
-        }
+        
+        pickerController = UIImagePickerController()
+        // pickerController notifies MemeMainVC then things happen, using MemeMainVC custom/default func
+        pickerController.delegate = self
+        
+        // set-up for UITextFields
+        initTextFieldAttribute(textField: topTextField, defaultString: "TOP")
+        initTextFieldAttribute(textField: botTextField, defaultString: "BOT")
+        
+        // Mark: Initialize Delegates
+        initDelegates()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +41,6 @@ class MemeMainViewController: UIViewController {
         shareItem.isEnabled = (imagePickerView?.image != nil)                
     }
     
-
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -144,11 +143,11 @@ class MemeMainViewController: UIViewController {
         imagePickerView.image = nil
         topTextField.text = "TOP"
         botTextField.text = "BOT"
-        dismiss(animated: true, completion: nil)
         
         // dimiss keyboard if necessary
         topTextField.resignFirstResponder()
         botTextField.resignFirstResponder()
+        dismiss(animated: true, completion: nil)
     }
     
     // save mem Object

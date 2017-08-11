@@ -10,10 +10,12 @@ import UIKit
 
 class SentMemeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: Outlet Section
-    @IBOutlet weak var MemeTableView: UITableView!
+    @IBOutlet weak var memeTableView: UITableView!
+    @IBOutlet weak var addMeme: UITabBarItem!
     
     // MARK: Variable Section
     let reuseIdentifier = "memeTableViewCell"
+    let memeDetailVCIdentifier = "MemeDetailNavigationController"
     var widthDic = [String:CGFloat]()
     var appDelegate: AppDelegate!
     var memes: [Meme]!
@@ -24,15 +26,13 @@ class SentMemeViewController: UIViewController, UITableViewDataSource, UITableVi
         
         initTestData()
         // Do any additional setup after loading the view.
-       
         
         initDataModel()
-        logD(msg: "after loading data")
         
         // Init Delegate Methods
         initDelegate()
-        //MemeTableView.delegate = self
-        logD(msg: "after assigning MemeTableView.delegate to self already")
+        //memeTableView.delegate = self
+        
                 
         
     }
@@ -42,6 +42,11 @@ class SentMemeViewController: UIViewController, UITableViewDataSource, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "gotoMeme"){
+            
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -44,9 +44,9 @@ extension MemeMainViewController{
 //        navigationBar.frame = CGRect(x:0, y:self.view.frame.height + self.navigationBar.frame.height,
 //                                     width: self.view.frame.size.width, height: self.navigationBar.frame.height)
         navigationBar.isHidden = true
-        let controller = self.navigationController
-        controller?.setNavigationBarHidden(true, animated: true)
-        controller?.setToolbarHidden(true, animated: true)
+//        let controller = self.navigationController
+//        controller?.setNavigationBarHidden(true, animated: true)
+//        controller?.setToolbarHidden(true, animated: true)
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -79,8 +79,7 @@ extension MemeMainViewController: UIImagePickerControllerDelegate, UINavigationC
         // need this or imagePickerView.image = image gives an error
         self.dismiss(animated: true, completion: nil)
         
-    }
-    
+    }    
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
         dismiss(animated: true, completion: nil)
