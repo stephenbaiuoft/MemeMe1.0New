@@ -9,11 +9,12 @@
 import UIKit
 
 class MemeNavigationViewController: UINavigationController {
-    var selectedMeme: Meme!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
         
     }
@@ -33,5 +34,7 @@ class MemeNavigationViewController: UINavigationController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }

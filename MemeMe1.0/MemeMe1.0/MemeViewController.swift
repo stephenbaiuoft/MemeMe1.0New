@@ -9,6 +9,7 @@
 import UIKit
 
 class MemeMainViewController: UIViewController {
+    var shouldInitTableVC: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,22 +17,24 @@ class MemeMainViewController: UIViewController {
         // MARK: AppDelegate Class Set Up for Meme App
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-        if(memes.count > 0 ){
+        
+        logD(msg: String(shouldInitTableVC ))
+        if(memes.count > 0 && shouldInitTableVC){
             // hand over to TabView VC
             initTabViewVC()
         }
-        
-        pickerController = UIImagePickerController()
-        // pickerController notifies MemeMainVC then things happen, using MemeMainVC custom/default func
-        pickerController.delegate = self
-        
-        // set-up for UITextFields
-        initTextFieldAttribute(textField: topTextField, defaultString: "TOP")
-        initTextFieldAttribute(textField: botTextField, defaultString: "BOT")
-        
-        // Mark: Initialize Delegates
-        initDelegates()
-        
+        else{
+            pickerController = UIImagePickerController()
+            // pickerController notifies MemeMainVC then things happen, using MemeMainVC custom/default func
+            pickerController.delegate = self
+            
+            // set-up for UITextFields
+            initTextFieldAttribute(textField: topTextField, defaultString: "TOP")
+            initTextFieldAttribute(textField: botTextField, defaultString: "BOT")
+            
+            // Mark: Initialize Delegates
+            initDelegates()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -140,13 +143,14 @@ class MemeMainViewController: UIViewController {
     
     // removes the selected picture
     @IBAction func cancelMeme(){
-        imagePickerView.image = nil
-        topTextField.text = "TOP"
-        botTextField.text = "BOT"
+//        imagePickerView.image = nil
+//        topTextField.text = "TOP"
+//        botTextField.text = "BOT"
         
         // dimiss keyboard if necessary
-        topTextField.resignFirstResponder()
-        botTextField.resignFirstResponder()
+//        topTextField.resignFirstResponder()
+//        botTextField.resignFirstResponder()
+        
         dismiss(animated: true, completion: nil)
     }
     

@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		DC2AF6951F3CD5DC00516FEA /* MemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AF6941F3CD5DB00516FEA /* MemeTableViewCell.swift */; };
-		DC2AF6991F3D561700516FEA /* SentMemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AF6981F3D561700516FEA /* SentMemeViewController.swift */; };
 		DC2AF69B1F3D564200516FEA /* SentMeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AF69A1F3D564200516FEA /* SentMeme.swift */; };
 		DC2AF69D1F3D6D5300516FEA /* DetailedMemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AF69C1F3D6D5300516FEA /* DetailedMemeViewController.swift */; };
 		DC2AF6A01F3D777100516FEA /* MemeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AF69F1F3D777100516FEA /* MemeNavigationViewController.swift */; };
 		DC2AF6A21F3D795200516FEA /* testNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AF6A11F3D795200516FEA /* testNaviViewController.swift */; };
+		DC2AF6A51F3D86F500516FEA /* MemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AF6A41F3D86F500516FEA /* MemeTableViewController.swift */; };
 		DC45CE441F378C49008FDCE9 /* MemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45CE431F378C49008FDCE9 /* MemeModel.swift */; };
 		DC6044FB1F3124ED00278C9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6044FA1F3124ED00278C9F /* AppDelegate.swift */; };
 		DC6044FD1F3124ED00278C9F /* MemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6044FC1F3124ED00278C9F /* MemeViewController.swift */; };
@@ -43,11 +43,11 @@
 
 /* Begin PBXFileReference section */
 		DC2AF6941F3CD5DB00516FEA /* MemeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewCell.swift; sourceTree = "<group>"; };
-		DC2AF6981F3D561700516FEA /* SentMemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemeViewController.swift; sourceTree = "<group>"; };
 		DC2AF69A1F3D564200516FEA /* SentMeme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMeme.swift; sourceTree = "<group>"; };
 		DC2AF69C1F3D6D5300516FEA /* DetailedMemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedMemeViewController.swift; sourceTree = "<group>"; };
 		DC2AF69F1F3D777100516FEA /* MemeNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeNavigationViewController.swift; sourceTree = "<group>"; };
 		DC2AF6A11F3D795200516FEA /* testNaviViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testNaviViewController.swift; sourceTree = "<group>"; };
+		DC2AF6A41F3D86F500516FEA /* MemeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewController.swift; sourceTree = "<group>"; };
 		DC45CE431F378C49008FDCE9 /* MemeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemeModel.swift; path = ../MemeModel.swift; sourceTree = "<group>"; };
 		DC6044F71F3124ED00278C9F /* MemeMe1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6044FA1F3124ED00278C9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,16 +90,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DC2AF6871F3B9FD100516FEA /* SentMemeVC */ = {
-			isa = PBXGroup;
-			children = (
-				DC2AF6941F3CD5DB00516FEA /* MemeTableViewCell.swift */,
-				DC2AF6981F3D561700516FEA /* SentMemeViewController.swift */,
-				DC2AF69A1F3D564200516FEA /* SentMeme.swift */,
-			);
-			name = SentMemeVC;
-			sourceTree = "<group>";
-		};
 		DC2AF6891F3BA3EF00516FEA /* CollectionViewVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +104,16 @@
 				DC2AF69F1F3D777100516FEA /* MemeNavigationViewController.swift */,
 			);
 			name = MemeNavigationVC;
+			sourceTree = "<group>";
+		};
+		DC2AF6A31F3D861200516FEA /* MemeTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DC2AF6A41F3D86F500516FEA /* MemeTableViewController.swift */,
+				DC2AF6941F3CD5DB00516FEA /* MemeTableViewCell.swift */,
+				DC2AF69A1F3D564200516FEA /* SentMeme.swift */,
+			);
+			name = MemeTableViewController;
 			sourceTree = "<group>";
 		};
 		DC6044EE1F3124ED00278C9F = {
@@ -139,9 +139,8 @@
 		DC6044F91F3124ED00278C9F /* MemeMe1.0 */ = {
 			isa = PBXGroup;
 			children = (
-				DC2AF69E1F3D774700516FEA /* MemeNavigationVC */,
+				DC2AF6A31F3D861200516FEA /* MemeTableViewController */,
 				DC2AF6891F3BA3EF00516FEA /* CollectionViewVC */,
-				DC2AF6871F3B9FD100516FEA /* SentMemeVC */,
 				DC6045281F31518600278C9F /* TextFieldDelegate */,
 				DC6044FA1F3124ED00278C9F /* AppDelegate.swift */,
 				DC45CE431F378C49008FDCE9 /* MemeModel.swift */,
@@ -151,6 +150,7 @@
 				DC6045011F3124ED00278C9F /* Assets.xcassets */,
 				DC6045031F3124ED00278C9F /* LaunchScreen.storyboard */,
 				DC6045061F3124ED00278C9F /* Info.plist */,
+				DC2AF69E1F3D774700516FEA /* MemeNavigationVC */,
 			);
 			path = MemeMe1.0;
 			sourceTree = "<group>";
@@ -318,7 +318,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC2AF6991F3D561700516FEA /* SentMemeViewController.swift in Sources */,
 				DC2AF6A01F3D777100516FEA /* MemeNavigationViewController.swift in Sources */,
 				DC6044FD1F3124ED00278C9F /* MemeViewController.swift in Sources */,
 				DC6044FB1F3124ED00278C9F /* AppDelegate.swift in Sources */,
@@ -326,6 +325,7 @@
 				DC2AF6951F3CD5DC00516FEA /* MemeTableViewCell.swift in Sources */,
 				DC2AF6A21F3D795200516FEA /* testNaviViewController.swift in Sources */,
 				DC2AF69D1F3D6D5300516FEA /* DetailedMemeViewController.swift in Sources */,
+				DC2AF6A51F3D86F500516FEA /* MemeTableViewController.swift in Sources */,
 				DC45CE441F378C49008FDCE9 /* MemeModel.swift in Sources */,
 				DC2AF69B1F3D564200516FEA /* SentMeme.swift in Sources */,
 			);

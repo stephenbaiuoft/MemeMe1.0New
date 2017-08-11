@@ -11,7 +11,5 @@ import UIKit
 class MemeTableViewCell: UITableViewCell {
     @IBOutlet weak var memeImage: UIImageView!
     @IBOutlet weak var memeLabel: UILabel!
-    
-
-    
+        
 }
