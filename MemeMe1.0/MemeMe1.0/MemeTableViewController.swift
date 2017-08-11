@@ -17,7 +17,8 @@ class MemeTableViewController: UITableViewController {
     let reuseIdentifier = "memeTableViewCell"
     let gotoMemeEditor = "gotoMemeEditor"
     let memeEditorController = "MemeMainViewController"
-    let memeDetailController = "MemeDetailViewController"
+    let MemeDetailViewController = "MemeDetailViewController"
+    
     
     var widthDic = [String:CGFloat]()
     var appDelegate: AppDelegate!
@@ -29,10 +30,16 @@ class MemeTableViewController: UITableViewController {
 
         initTestData()
         // Do any additional setup after loading the view.
-        
-        initDataModel()
+        logD(msg: "loading data in viewDidLoad")
+        loadDataModel()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        logD(msg: "loading data in viewWillAppear")
+        loadDataModel()
+        
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,9 +79,10 @@ class MemeTableViewController: UITableViewController {
     
     // Tell the delegate that a particular row has been selected
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let controller = storyboard?.instantiateViewController(withIdentifier: memeDetailController ) as! MemeDetailViewController
+        let controller = storyboard?.instantiateViewController(withIdentifier: MemeDetailViewController ) as! MemeDetailViewController
         let index = (indexPath as NSIndexPath).row
         controller.selectedMeme = memes[index]
+        controller.hidesBottomBarWhenPushed = true
         
         self.navigationController?.pushViewController(controller, animated: true)
     }

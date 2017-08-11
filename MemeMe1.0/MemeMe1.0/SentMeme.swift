@@ -25,7 +25,7 @@ func initTestData(){
 // MARK: Other Helper Functions Section
 extension MemeTableViewController{
     
-    func initDataModel(){
+    func loadDataModel(){
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
         widthDic[reuseIdentifier] = 75.0

@@ -36,6 +36,13 @@ extension MemeMainViewController{
 
 // MARK: Back-end functions
 extension MemeMainViewController{
+    // setting current VC to be editing mode
+    func initEditSetting(){
+        imagePickerView.image = editMeme.originalImage
+        topTextField.text = editMeme.topText
+        botTextField.text = editMeme.bottomText
+    }
+    
     // Render view to an image
     func generateMemedImage() -> UIImage {
         // y = view.frame.height + self.pickerButton.frame.height

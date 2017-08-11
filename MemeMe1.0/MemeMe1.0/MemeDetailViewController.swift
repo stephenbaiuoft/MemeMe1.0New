@@ -12,6 +12,8 @@ class MemeDetailViewController: UIViewController {
     // MARK: Class Variables
     var selectedMeme: Meme!
     let memeEditorController = "MemeMainViewController"
+    let gotoMemeEditorSegueIdentifier = "detailMemeToMemeMain"
+
     
     // MARK: IBOutlets
     @IBOutlet weak var memeImageView: UIImageView!
@@ -46,7 +48,26 @@ class MemeDetailViewController: UIViewController {
     func gotoMemeEditor(){
         let controller = storyboard?.instantiateViewController(withIdentifier: memeEditorController) as! MemeMainViewController
         controller.shouldInitTableVC = false
+        controller.editMode = true
+        controller.editMeme = selectedMeme
+        
         present(controller, animated: true, completion: nil)
+        
     }
+    
+//    SEGUE METHOD: then the NavigationToolBar is still visible
+//    func gotoMemeEditor(){
+//        performSegue(withIdentifier: gotoMemeEditorSegueIdentifier, sender: self)
+//    }
 
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if (segue.identifier == gotoMemeEditorSegueIdentifier){
+//            let controller = segue.destination as! MemeMainViewController
+//            controller.shouldInitTableVC = false
+//            controller.editMode = true
+//            controller.editMeme = selectedMeme
+//        }
+//    }
+//    
 }

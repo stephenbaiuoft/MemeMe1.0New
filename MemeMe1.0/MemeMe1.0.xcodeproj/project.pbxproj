@@ -14,7 +14,7 @@
 		DC2AF6A51F3D86F500516FEA /* MemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AF6A41F3D86F500516FEA /* MemeTableViewController.swift */; };
 		DC45CE441F378C49008FDCE9 /* MemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45CE431F378C49008FDCE9 /* MemeModel.swift */; };
 		DC6044FB1F3124ED00278C9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6044FA1F3124ED00278C9F /* AppDelegate.swift */; };
-		DC6044FD1F3124ED00278C9F /* MemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6044FC1F3124ED00278C9F /* MemeViewController.swift */; };
+		DC6044FD1F3124ED00278C9F /* MemeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6044FC1F3124ED00278C9F /* MemeMainViewController.swift */; };
 		DC6045001F3124ED00278C9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6044FE1F3124ED00278C9F /* Main.storyboard */; };
 		DC6045021F3124ED00278C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC6045011F3124ED00278C9F /* Assets.xcassets */; };
 		DC6045051F3124ED00278C9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6045031F3124ED00278C9F /* LaunchScreen.storyboard */; };
@@ -49,7 +49,7 @@
 		DC45CE431F378C49008FDCE9 /* MemeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemeModel.swift; path = ../MemeModel.swift; sourceTree = "<group>"; };
 		DC6044F71F3124ED00278C9F /* MemeMe1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6044FA1F3124ED00278C9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC6044FC1F3124ED00278C9F /* MemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewController.swift; sourceTree = "<group>"; };
+		DC6044FC1F3124ED00278C9F /* MemeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMainViewController.swift; sourceTree = "<group>"; };
 		DC6044FF1F3124ED00278C9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC6045011F3124ED00278C9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC6045041F3124ED00278C9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,6 +113,14 @@
 			name = MemeTableViewController;
 			sourceTree = "<group>";
 		};
+		DC2AF6A71F3D992300516FEA /* MemeDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DC2AF69C1F3D6D5300516FEA /* MemeDetailViewController.swift */,
+			);
+			name = MemeDetailViewController;
+			sourceTree = "<group>";
+		};
 		DC6044EE1F3124ED00278C9F = {
 			isa = PBXGroup;
 			children = (
@@ -136,13 +144,13 @@
 		DC6044F91F3124ED00278C9F /* MemeMe1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				DC2AF6A71F3D992300516FEA /* MemeDetailViewController */,
 				DC2AF6A31F3D861200516FEA /* MemeTableViewController */,
 				DC2AF6891F3BA3EF00516FEA /* CollectionViewVC */,
 				DC6045281F31518600278C9F /* TextFieldDelegate */,
-				DC2AF69C1F3D6D5300516FEA /* MemeDetailViewController.swift */,
 				DC6044FA1F3124ED00278C9F /* AppDelegate.swift */,
 				DC45CE431F378C49008FDCE9 /* MemeModel.swift */,
-				DC6044FC1F3124ED00278C9F /* MemeViewController.swift */,
+				DC6044FC1F3124ED00278C9F /* MemeMainViewController.swift */,
 				DC6044FE1F3124ED00278C9F /* Main.storyboard */,
 				DC6045011F3124ED00278C9F /* Assets.xcassets */,
 				DC6045031F3124ED00278C9F /* LaunchScreen.storyboard */,
@@ -316,7 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC2AF6A01F3D777100516FEA /* MemeNavigationViewController.swift in Sources */,
-				DC6044FD1F3124ED00278C9F /* MemeViewController.swift in Sources */,
+				DC6044FD1F3124ED00278C9F /* MemeMainViewController.swift in Sources */,
 				DC6044FB1F3124ED00278C9F /* AppDelegate.swift in Sources */,
 				DC60452A1F3151A300278C9F /* DisplayUITextFieldDelegate.swift in Sources */,
 				DC2AF6951F3CD5DC00516FEA /* MemeTableViewCell.swift in Sources */,

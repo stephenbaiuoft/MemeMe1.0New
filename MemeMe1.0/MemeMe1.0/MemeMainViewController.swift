@@ -10,6 +10,8 @@ import UIKit
 
 class MemeMainViewController: UIViewController {
     var shouldInitTableVC: Bool = true
+    var editMode: Bool = false
+    var editMeme: Meme!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,7 @@ class MemeMainViewController: UIViewController {
             
             // Mark: Initialize Delegates
             initDelegates()
+            
         }
     }
     
@@ -41,7 +44,12 @@ class MemeMainViewController: UIViewController {
         super.viewWillAppear(animated)
         cameraItem.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
-        shareItem.isEnabled = (imagePickerView?.image != nil)                
+        shareItem.isEnabled = (imagePickerView?.image != nil)
+        
+        if(editMode){
+            // display Editing Setting
+            initEditSetting()
+        }
     }
     
     
