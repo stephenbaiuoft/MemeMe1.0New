@@ -11,6 +11,7 @@ import UIKit
 class MemeTableViewController: UITableViewController {
 
     let reuseIdentifier = "memeTableViewCell"
+    var widthDic = [String:CGFloat]()
     var appDelegate: AppDelegate!
     var memes: [Meme]!
     
@@ -21,8 +22,7 @@ class MemeTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.        
 
         // MARK: get Data Model
         initDataModel()
@@ -57,7 +57,7 @@ class MemeTableViewController: UITableViewController {
  
     // fix the heightForEach Row
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        return 75.0
+        return widthDic[reuseIdentifier]!
     }
 
     // MARK: Helper Functions
@@ -66,6 +66,7 @@ class MemeTableViewController: UITableViewController {
     func initDataModel(){
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
+        widthDic[reuseIdentifier] = 75.0
     }
     /*
     // Override to support conditional editing of the table view.
