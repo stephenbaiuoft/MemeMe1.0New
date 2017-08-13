@@ -110,8 +110,7 @@ class MemeCollectionViewController: UICollectionViewController {
     // Go to MemeEditor!!!!!!!
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == gotoMemeMainSegueIdentifier){
-            let controller = storyboard?.instantiateViewController(withIdentifier: meMeMainVCIdentifer) as! MemeMainViewController
-            controller.shouldInitTableVC = false
+            let controller = storyboard?.instantiateViewController(withIdentifier: meMeMainVCIdentifer) as! MemeMainViewController            
             present(controller, animated: true, completion: nil)
         }
     }

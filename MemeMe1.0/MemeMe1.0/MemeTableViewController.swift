@@ -30,6 +30,8 @@ class MemeTableViewController: UITableViewController {
         
         // Do any additional setup after loading the view.        
         loadDataModel()
+        
+        loadMemeEditor()
     }
     
     
@@ -118,8 +120,7 @@ class MemeTableViewController: UITableViewController {
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == gotoMemeEditor){
-            let controller = storyboard?.instantiateViewController(withIdentifier: memeEditorController) as! MemeMainViewController
-            controller.shouldInitTableVC = false
+            let controller = storyboard?.instantiateViewController(withIdentifier: memeEditorController) as! MemeMainViewController            
             present(controller, animated: true, completion: nil)
         }
     }

@@ -9,7 +9,6 @@
 import UIKit
 
 class MemeMainViewController: UIViewController {
-    var shouldInitTableVC: Bool = true
     var editMode: Bool = false
     var editMeme: Meme!
     
@@ -20,29 +19,24 @@ class MemeMainViewController: UIViewController {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
         
-        logD(msg: String(shouldInitTableVC ))
-        if(memes.count > 0 && shouldInitTableVC){
-            // hand over to TabView VC
-            initTabViewVC()
-        }
-        else{
-            pickerController = UIImagePickerController()
-            // pickerController notifies MemeMainVC then things happen, using MemeMainVC custom/default func
-            pickerController.delegate = self
+        pickerController = UIImagePickerController()
+        // pickerController notifies MemeMainVC then things happen, using MemeMainVC custom/default func
+        pickerController.delegate = self
+        
+        // set-up for UITextFields
+        initTextFieldAttribute(textField: topTextField, defaultString: "TOP")
+        initTextFieldAttribute(textField: botTextField, defaultString: "BOT")
+        
+        // Mark: Initialize Delegates
+        initDelegates()
             
-            // set-up for UITextFields
-            initTextFieldAttribute(textField: topTextField, defaultString: "TOP")
-            initTextFieldAttribute(textField: botTextField, defaultString: "BOT")
-            
-            // Mark: Initialize Delegates
-            initDelegates()
-            
-        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cameraItem.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        cancelItem.isEnabled = (memes.count > 0)
         subscribeToKeyboardNotifications()
         shareItem.isEnabled = (imagePickerView?.image != nil)
         

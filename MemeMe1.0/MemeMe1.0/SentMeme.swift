@@ -18,5 +18,12 @@ extension MemeTableViewController{
         widthDic[reuseIdentifier] = 130
     }
     
+    // load MemeEditor if necessary
+    func loadMemeEditor(){
+        if(memes.count == 0){
+            performSegue(withIdentifier: gotoMemeEditor, sender: self)
+        }
+    }
+    
     
 }

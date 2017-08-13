@@ -29,12 +29,6 @@ class MemeDetailViewController: UIViewController {
         memeImageView.image = selectedMeme.memedImage
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     /*
     // MARK: - Navigation
 
@@ -46,8 +40,7 @@ class MemeDetailViewController: UIViewController {
     */
     
     func gotoMemeEditor(){
-        let controller = storyboard?.instantiateViewController(withIdentifier: memeEditorController) as! MemeMainViewController
-        controller.shouldInitTableVC = false
+        let controller = storyboard?.instantiateViewController(withIdentifier: memeEditorController) as! MemeMainViewController        
         controller.editMode = true
         controller.editMeme = selectedMeme
         
@@ -55,19 +48,4 @@ class MemeDetailViewController: UIViewController {
         
     }
     
-//    SEGUE METHOD: then the NavigationToolBar is still visible
-//    func gotoMemeEditor(){
-//        performSegue(withIdentifier: gotoMemeEditorSegueIdentifier, sender: self)
-//    }
-
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if (segue.identifier == gotoMemeEditorSegueIdentifier){
-//            let controller = segue.destination as! MemeMainViewController
-//            controller.shouldInitTableVC = false
-//            controller.editMode = true
-//            controller.editMeme = selectedMeme
-//        }
-//    }
-//    
 }
