@@ -29,16 +29,10 @@ class MemeTableViewController: UITableViewController {
         super.viewDidLoad()
 
         initTestData()
-        // Do any additional setup after loading the view.
-        logD(msg: "loading data in viewDidLoad")
+        // Do any additional setup after loading the view.        
         loadDataModel()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        logD(msg: "loading data in viewWillAppear")
-        loadDataModel()
-        
-    }
     
     // MARK: - Table view data source
 
