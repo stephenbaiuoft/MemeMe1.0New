@@ -9,32 +9,13 @@
 import Foundation
 import UIKit
 
-// test purpose
-func initTestData(){
-    let m1 = Meme.init(topText: "t1", bottomText: "b1", originalImage: nil, memedImage: nil)
-    let m2 = Meme.init(topText: "t2", bottomText: "b2", originalImage: nil, memedImage: nil)
-    let m3 = Meme.init(topText: "t3", bottomText: "b3", originalImage: nil, memedImage: nil)
-    let m4 = Meme.init(topText: "t3", bottomText: "b3", originalImage: nil, memedImage: nil)
-    let m5 = Meme.init(topText: "t3", bottomText: "b3", originalImage: nil, memedImage: nil)
-    let m6 = Meme.init(topText: "t3", bottomText: "b3", originalImage: nil, memedImage: nil)
-    
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    appDelegate.memes.append(m1)
-    appDelegate.memes.append(m2)
-    appDelegate.memes.append(m3)
-    appDelegate.memes.append(m4)
-    appDelegate.memes.append(m5)
-    appDelegate.memes.append(m6)
-
-}
-
 // MARK: Other Helper Functions Section
 extension MemeTableViewController{
     
     func loadDataModel(){
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-        widthDic[reuseIdentifier] = 75.0
+        widthDic[reuseIdentifier] = 130
     }
     
     

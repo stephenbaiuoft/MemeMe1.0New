@@ -23,6 +23,7 @@ class MemeCollectionViewController: UICollectionViewController {
     let cellSpace:CGFloat = 10.0
     var sectionInsets: UIEdgeInsets!
     let itemsPerRow: CGFloat = 3
+    var didLoadView = false
     
     // MARK: Outlet Section
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
@@ -36,6 +37,7 @@ class MemeCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
         sectionInsets = UIEdgeInsets(top: cellSpace, left: cellSpace, bottom: cellSpace, right: cellSpace)
         flowLayout.sectionInset = sectionInsets
+        didLoadView = true
         setCellEqualSpacing(size: view.frame.width, widthHeightRatio: 0.5)
         
         // Load data module
@@ -47,8 +49,25 @@ class MemeCollectionViewController: UICollectionViewController {
 
         // resize the flowLayout; size.Width is always the transitioned width!
         super.viewWillTransition(to: size, with: coordinator)
-        setCellEqualSpacing(size: size.width, widthHeightRatio: size.width/size.height)
+        // BUG HERE: viwWillTransition is Called Before ViewDidLoad!!!!   ====> Temporary Fix
+        // print("viewWillTransition: setCellEqualSpacing")
+        if(didLoadView){
+            setCellEqualSpacing(size: size.width, widthHeightRatio: size.width/size.height)
+        }
+        
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            let f = self.view.frame
+        if(animated){
+        
+            
+            print("width: ", f.width, "height: ", f.height)
+            
+            
+        }
+        print("not animited   width: ", f.width, "height: ", f.height)
     }
     
     // MARK: - Back End Function

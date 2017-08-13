@@ -27,8 +27,7 @@ class MemeTableViewController: UITableViewController {
     // MARK: Function
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        initTestData()
+        
         // Do any additional setup after loading the view.        
         loadDataModel()
     }
@@ -50,8 +49,34 @@ class MemeTableViewController: UITableViewController {
         // Configure the cell...
         let row = (indexPath as NSIndexPath).row
         cell.memeImage?.image = memes[row].memedImage
-        cell.memeLabel?.text = memes[row].topText + memes[row].bottomText
+        
+        var topText = memes[row].topText
+        topText = editText(text: topText, reverse: false)
+        var botText = memes[row].bottomText
+        botText = editText(text: botText, reverse:true)
+            
+        cell.memeLabel?.text = topText + "..." + botText
+
+
+        cell.memeLabel?.adjustsFontSizeToFitWidth = true
+        
         return cell
+    }
+    
+    func editText(text:String, reverse: Bool) -> String{
+        if(text.characters.count > 11){
+            let i = text.index(text.startIndex, offsetBy: 11)
+            if(!reverse){
+                return text.substring(to: i )
+            }
+            else{
+                var hold = String(text.characters.reversed())
+                hold = hold.substring(to: i)
+                hold = String(hold.characters.reversed())
+                return hold
+            }
+        }
+        return text
     }
     
     // fix the heightForEach Row
