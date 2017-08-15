@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,7 +49,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQx-XB-FE4" userLabel="Meme Image">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="OQx-XB-FE4" userLabel="Meme Image">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         </imageView>
                                     </subviews>
@@ -202,7 +203,7 @@
             <objects>
                 <navigationController id="BPy-kU-TWb" userLabel="TableView Navigation Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="table_30x30" id="X9P-gr-i29"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Q7P-MO-Zge">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q7P-MO-Zge">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -228,21 +229,20 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sMM-mv-gao" id="SNW-jY-9U6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meme Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8p-TX-J8a" userLabel="Meme Label">
-                                            <rect key="frame" x="130" y="65.666666666666686" width="284" height="20.333333333333329"/>
+                                            <rect key="frame" x="150" y="65.666666666666686" width="264" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uMp-a2-E1r" userLabel="Meme Image">
-                                            <rect key="frame" x="0.0" y="10" width="130" height="130.33333333333334"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uMp-a2-E1r" userLabel="Meme Image">
+                                            <rect key="frame" x="0.0" y="0.3333333333333286" width="150" height="150"/>
                                             <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="130" id="5LQ-YG-sgY"/>
-                                                <constraint firstAttribute="width" constant="130" id="UHf-3Q-9OX"/>
+                                                <constraint firstAttribute="width" secondItem="uMp-a2-E1r" secondAttribute="height" id="5q4-Ma-gka"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -254,6 +254,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="l8p-TX-J8a" secondAttribute="trailing" id="7t0-wV-q8z"/>
                                     <constraint firstItem="uMp-a2-E1r" firstAttribute="centerY" secondItem="sMM-mv-gao" secondAttribute="centerY" id="arb-Ul-wdH"/>
+                                    <constraint firstItem="uMp-a2-E1r" firstAttribute="height" secondItem="sMM-mv-gao" secondAttribute="height" id="eYc-bO-iKl"/>
                                     <constraint firstItem="uMp-a2-E1r" firstAttribute="leading" secondItem="sMM-mv-gao" secondAttribute="leading" id="g9D-AZ-M74"/>
                                 </constraints>
                                 <connections>

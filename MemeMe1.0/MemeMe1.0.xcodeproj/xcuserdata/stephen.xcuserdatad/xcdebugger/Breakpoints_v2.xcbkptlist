@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe1.0/MemeCollectionViewController.swift"
-            timestampString = "524297815.735694"
+            timestampString = "524520382.590672"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "setCellEqualSpacing(size:widthHeightRatio:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,28 +250,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe1.0/MemeCollectionViewController.swift"
-            timestampString = "524297815.735694"
+            timestampString = "524520382.590672"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "setCellEqualSpacing(size:widthHeightRatio:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MemeMe1.0/MemeTableViewController.swift"
-            timestampString = "524338972.406246"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "editText(text:reverse:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

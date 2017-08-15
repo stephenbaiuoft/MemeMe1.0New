@@ -145,14 +145,6 @@ class MemeMainViewController: UIViewController {
     
     // removes the selected picture
     @IBAction func cancelMeme(){
-//        imagePickerView.image = nil
-//        topTextField.text = "TOP"
-//        botTextField.text = "BOT"
-        
-        // dimiss keyboard if necessary
-//        topTextField.resignFirstResponder()
-//        botTextField.resignFirstResponder()
-        
         dismiss(animated: true, completion: nil)
     }
     

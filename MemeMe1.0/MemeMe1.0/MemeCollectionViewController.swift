@@ -57,19 +57,7 @@ class MemeCollectionViewController: UICollectionViewController {
         
 
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-            let f = self.view.frame
-        if(animated){
         
-            
-            print("width: ", f.width, "height: ", f.height)
-            
-            
-        }
-        print("not animited   width: ", f.width, "height: ", f.height)
-    }
-    
     // MARK: - Back End Function
     func setCellEqualSpacing(size: CGFloat, widthHeightRatio: CGFloat){
         var dimension:CGFloat = 0.0
@@ -96,16 +84,6 @@ class MemeCollectionViewController: UICollectionViewController {
         memes = appDelegate.memes
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // Go to MemeEditor!!!!!!!
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

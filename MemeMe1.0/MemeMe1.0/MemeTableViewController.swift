@@ -49,40 +49,23 @@ class MemeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MemeTableViewCell
         
         // Configure the cell...
-        let row = (indexPath as NSIndexPath).row
-        cell.memeImage?.image = memes[row].memedImage
-        
-        var topText = memes[row].topText
-        topText = editText(text: topText, reverse: false)
-        var botText = memes[row].bottomText
-        botText = editText(text: botText, reverse:true)
-            
-        cell.memeLabel?.text = topText + "..." + botText
-
-
-        cell.memeLabel?.adjustsFontSizeToFitWidth = true
+        let row = (indexPath as NSIndexPath).row            
+        cell.setupCell(meme: memes[row])
         
         return cell
     }
     
-    func editText(text:String, reverse: Bool) -> String{
-        if(text.characters.count > 11){
-            let i = text.index(text.startIndex, offsetBy: 11)
-            if(!reverse){
-                return text.substring(to: i )
-            }
-            else{
-                var hold = String(text.characters.reversed())
-                hold = hold.substring(to: i)
-                hold = String(hold.characters.reversed())
-                return hold
-            }
-        }
-        return text
-    }
+
     
     // fix the heightForEach Row
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        
+        if(memes.count > 0){
+    
+        let selected = memes[(indexPath as NSIndexPath).row]
+        let scaled =  CGFloat.maximum( selected.memedImage.size.height, selected.memedImage.size.width) / 5
+            return scaled
+        }
         return widthDic[reuseIdentifier]!
     }
     
